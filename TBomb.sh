@@ -35,7 +35,7 @@ banner() {
         echo -e "\e[4;34m This Bomber Was Created By \e[1;32mBandar \e[0m"
     else
         echo -e "\e[1;34mCreated By \e[1;34m"
-        toilet -f mono12 -F border Bandar
+        toilet -f Bandar
     fi
     
 }
