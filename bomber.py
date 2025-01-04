@@ -150,7 +150,7 @@ def do_git_update():
         mesgdcrt.GeneralMessage("Then run command:")
         print(
             "git checkout . && "
-            "git pull https://github.com/anshsx/TBomb.git HEAD")
+            "git pull https://github.com/anshsx/billi.git HEAD")
     sys.exit()
 
 
@@ -168,7 +168,7 @@ def check_for_updates():
         return
     mesgdcrt.SectionMessage("Checking for updates")
     fver = requests.get(
-        "https://raw.githubusercontent.com/anshsx/TBomb/master/.version"
+        "https://raw.githubusercontent.com/anshsx/billi/master/.version"
     ).text.strip()
     if fver != __VERSION__:
         mesgdcrt.WarningMessage("An update is available")
@@ -182,9 +182,9 @@ def check_for_updates():
 def notifyen():
     try:
         if DEBUG_MODE:
-            url = "https://github.com/anshsx/TBomb/raw/dev/.notify"
+            url = "https://github.com/anshsx/billi/raw/dev/.notify"
         else:
-            url = "https://github.com/anshsx/TBomb/raw/master/.notify"
+            url = "https://github.com/anshsx/billi/raw/master/.notify"
         noti = requests.get(url).text.upper()
         if len(noti) > 10:
             mesgdcrt.SectionMessage("NOTIFICATION: " + noti)
