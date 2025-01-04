@@ -1,8 +1,9 @@
 #!/bin/bash
 
+# Detect Linux Distribution
 detect_distro() {
     if [[ "$OSTYPE" == linux-android* ]]; then
-            distro="termux"
+        distro="termux"
     fi
 
     if [ -z "$distro" ]; then
@@ -20,9 +21,12 @@ detect_distro() {
     fi
 }
 
+# Pause Function
 pause() {
     read -n1 -r -p "Press any key to continue..." key
 }
+
+# Banner Function
 banner() {
     clear
     echo -e "\e[1;31m"
@@ -30,11 +34,10 @@ banner() {
         echo 'Introducing Billi'
     else
         figlet Billi
-    
     fi
-    
 }
 
+# Initialize Environment Variables
 init_environ(){
     declare -A backends; backends=(
         ["arch"]="pacman -S --noconfirm"
@@ -61,10 +64,10 @@ init_environ(){
     PIP="$PYTHON -m pip"
 }
 
+# Install Dependencies
 install_deps(){
-    
-    packages=(openssl git $PYTHON $PYTHON-pip figlet toilet)
-    if [ -n "$INSTALL" ];then
+    packages=(openssl git $PYTHON $PYTHON-pip figlet)
+    if [ -n "$INSTALL" ]; then
         for package in ${packages[@]}; do
             $SUDO $INSTALL $package
         done
@@ -77,11 +80,12 @@ install_deps(){
     fi
 }
 
+# Main Script Logic
 banner
 pause
 detect_distro
 init_environ
-if [ -f .update ];then
+if [ -f .update ]; then
     echo "All Requirements Found...."
 else
     echo 'Installing Requirements....'
@@ -92,34 +96,20 @@ else
     echo 'Requirements Installed....'
     pause
 fi
+
+# Menu with SMS Bombing Option
 while :
 do
     banner
     echo ""
-    echo "[1] To  Start SMS  Bomber "
-    echo "[2] To  Start CALL Bomber "
-    echo "[3] To  Start MAIL Bomber "
-    echo "[4] To  Update "
-    echo "[5] To  Exit "
+    echo "[1] Start SMS Bomber"
+    echo "[2] To Exit"
     read ch
     clear
-    if [ $ch -eq 1 ];then
+    if [ $ch -eq 1 ]; then
         $PYTHON bomber.py --sms
         exit
-    elif [ $ch -eq 2 ];then
-        $PYTHON bomber.py --call
-        exit
-    elif [ $ch -eq 3 ];then
-        $PYTHON bomber.py --mail
-        exit
-    elif [ $ch -eq 4 ];then
-        echo -e "\e[1;34m Downloading Latest Files..."
-        rm -f .update
-        $PYTHON bomber.py --update
-        echo -e "\e[1;34m RUN Billi Again..."
-        pause
-        exit
-    elif [ $ch -eq 5 ];then
+    elif [ $ch -eq 2 ]; then
         banner
         exit
     else
