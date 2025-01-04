@@ -95,11 +95,11 @@ fi
 while :
 do
     banner
-    
+    echo ""
     echo "[1] To  Start SMS  Bomber "
-    echo "[2] To  Start CALL Bomber (Not Yet Available)"
-    echo "[3] To  Start MAIL Bomber (Not Yet Available)"
-    echo "[4] To  Update (Works On Linux And Linux Emulators) "
+    echo "[2] To  Start CALL Bomber "
+    echo "[3] To  Start MAIL Bomber "
+    echo "[4] To  Update "
     echo "[5] To  Exit "
     read ch
     clear
