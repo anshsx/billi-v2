@@ -32,17 +32,15 @@ banner() {
         figlet TBomb
     fi
     if ! [ -x "$(command -v toilet)" ]; then
-        echo -e "\e[4;34m This Bomber Was Created By \e[1;32mSpeedX \e[0m"
+        echo -e "\e[4;34m This Bomber Was Created By \e[1;32mAnsh \e[0m"
     else
         echo -e "\e[1;34mCreated By \e[1;34m"
-        toilet -f mono12 -F border SpeedX
+        toilet -f mono12 -F border Ansh
     fi
     echo -e "\e[1;34m For Any Queries Join Me!!!\e[0m"
-    echo -e "\e[1;32m           Telegram: https://t.me/TBombChat \e[0m"
-    echo -e "\e[4;32m   YouTube: https://www.youtube.com/c/SpeedXTech \e[0m"
+    echo -e "\e[1;32m           Instagram: https://www.instagram.com/ansh_sx \e[0m
     echo " "
-    echo "NOTE: Kindly move to the PIP version Of TBomb for more stability."
-    echo " "
+    
 }
 
 init_environ(){
@@ -98,7 +96,7 @@ else
     echo .
     echo .
     install_deps
-    echo This Script Was Made By SpeedX > .update
+    echo This Script Was Made By Ansh > .update
     echo 'Requirements Installed....'
     pause
 fi
@@ -108,7 +106,7 @@ do
     echo -e "\e[4;31m Please Read Instruction Carefully !!! \e[0m"
     echo " "
     echo "Press 1 To  Start SMS  Bomber "
-    echo "Press 2 To  Start CALL Bomber "
+    echo "Press 2 To  Start CALL Bomber (Not works correctly now)"
     echo "Press 3 To  Start MAIL Bomber (Not Yet Available)"
     echo "Press 4 To  Update (Works On Linux And Linux Emulators) "
     echo "Press 5 To  Exit "
