@@ -27,15 +27,15 @@ banner() {
     clear
     echo -e "\e[1;31m"
     if ! [ -x "$(command -v figlet)" ]; then
-        echo 'Introducing TBomb'
+        echo 'Introducing Billi'
     else
-        figlet TBomb
+        figlet Billi
     fi
     if ! [ -x "$(command -v toilet)" ]; then
-        echo -e "\e[4;34m This Bomber Was Created By \e[1;32mSpeedX \e[0m"
+        echo -e "\e[4;34m This Bomber Was Created By \e[1;32mBandar \e[0m"
     else
         echo -e "\e[1;34mCreated By \e[1;34m"
-        toilet -f mono12 -F border Ansh
+        toilet -f mono12 -F border Bandar
     fi
     
 }
@@ -93,7 +93,7 @@ else
     echo .
     echo .
     install_deps
-    echo This Script Was Made By Ansh > .update
+    echo This Script Was Made By Bandar > .update
     echo 'Requirements Installed....'
     pause
 fi
@@ -122,7 +122,7 @@ do
         echo -e "\e[1;34m Downloading Latest Files..."
         rm -f .update
         $PYTHON bomber.py --update
-        echo -e "\e[1;34m RUN TBomb Again..."
+        echo -e "\e[1;34m RUN Billi Again..."
         pause
         exit
     elif [ $ch -eq 5 ];then
