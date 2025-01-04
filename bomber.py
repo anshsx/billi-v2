@@ -378,13 +378,9 @@ parser.add_argument("-v", "--version", action="store_true",
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    if args.ascii:
-        ASCII_MODE = True
-        mesgdcrt = MessageDecorator("stat")
+    
     if args.version:
         print("Version: ", __VERSION__)
-    elif args.contributors:
-        print("Contributors: ", " ".join(__CONTRIBUTORS__))
     elif args.update:
         update()
     
