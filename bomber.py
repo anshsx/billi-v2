@@ -120,6 +120,11 @@ def do_zip_update():
 
     sys.exit()
 
+def format_phone(num):
+    num = [n for n in num if n in string.digits]
+    return ''.join(num).strip()
+    
+
 
 def do_git_update():
     success = False
@@ -196,7 +201,7 @@ def notifyen():
 def get_phone_info():
     while True:
         target = ""
-        cc = 91
+        cc = "91"
         target = input(mesgdcrt.CommandMessage(
             "Enter number: +" + cc + " "))
         target = format_phone(target)
