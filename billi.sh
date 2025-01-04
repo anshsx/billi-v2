@@ -102,14 +102,28 @@ while :
 do
     banner
     echo ""
-    echo "[1] Start SMS Bomber"
-    echo "[2] To Exit"
+    echo "[1] To  Start SMS  Bomber "
+    echo "[4] To  Update "
+    echo "[5] To  Exit "
     read ch
     clear
-    if [ $ch -eq 1 ]; then
+    if [ $ch -eq 1 ];then
         $PYTHON bomber.py --sms
         exit
-    elif [ $ch -eq 2 ]; then
+    elif [ $ch -eq 2 ];then
+        $PYTHON bomber.py --call
+        exit
+    elif [ $ch -eq 3 ];then
+        $PYTHON bomber.py --mail
+        exit
+    elif [ $ch -eq 4 ];then
+        echo -e "\e[1;34m Downloading Latest Files..."
+        rm -f .update
+        $PYTHON bomber.py --update
+        echo -e "\e[1;34m RUN Billi Again..."
+        pause
+        exit
+    elif [ $ch -eq 5 ];then
         banner
         exit
     else
