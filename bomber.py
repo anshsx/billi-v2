@@ -84,11 +84,11 @@ def format_phone(num):
 def do_zip_update():
     success = False
     if DEBUG_MODE:
-        zip_url = "https://github.com/anshsx/TBomb/archive/dev.zip"
-        dir_name = "TBomb-dev"
+        zip_url = "https://github.com/anshsx/billi/archive/dev.zip"
+        dir_name = "billi-dev"
     else:
-        zip_url = "https://github.com/anshsx/TBomb/archive/master.zip"
-        dir_name = "TBomb-master"
+        zip_url = "https://github.com/anshsx/billi/archive/master.zip"
+        dir_name = "billi-master"
     print(ALL_COLORS[0]+"Downloading ZIP ... "+RESET_ALL)
     response = requests.get(zip_url)
     if response.status_code == 200:
@@ -116,7 +116,7 @@ def do_zip_update():
     else:
         mesgdcrt.FailureMessage("Unable to update Billi.")
         mesgdcrt.WarningMessage(
-            "Grab The Latest one From https://github.com/anshsx/TBomb.git")
+            "Grab The Latest one From https://github.com/anshsx/billi.git")
 
     sys.exit()
 
@@ -356,7 +356,7 @@ def selectnode(mode="sms"):
 
 mesgdcrt = MessageDecorator("icon")
 if sys.version_info[0] != 3:
-    mesgdcrt.FailureMessage("TBomb will work only in Python v3")
+    mesgdcrt.FailureMessage("Billi will work only in Python v3")
     sys.exit()
 
 try:
